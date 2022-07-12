@@ -39,7 +39,7 @@ body {
     object-fit: cover;
     cursor: pointer;
     border: none;
-    border-radius: 1px;
+    border-radius: 3px;
     transition: transform 0.8s;
 }
 
@@ -56,6 +56,7 @@ h1 {
 .popup {
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(4px);
+    animation: show 0.4s;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -119,7 +120,7 @@ h1 {
     margin-bottom: 30px;
 }
 
-.popup__arrow{
+.popup__arrow {
     position: absolute;
     color: white;
     top: 50%;
@@ -127,20 +128,37 @@ h1 {
     font-size: 52px;
     border: none;
     cursor: pointer;
+    opacity: 0.6;
 }
 
-.popup__arrow:hover{
+.popup__arrow:hover {
     transform: scale(1.1);
+    opacity: 0.9;
 }
 
-.popup__arrow--left{
-left: -10%;
+.popup__arrow--left {
+    left: -10%;
 }
 
-.popup__arrow--right{
-right: -10%;
+.popup__arrow--right {
+    right: -10%;
 }
 
-.popup__main{
+.popup__main {
     position: relative;
+}
+
+.border__main {
+    border: solid;
+    border-color: yellow;
+}
+
+@keyframes show {
+    from {
+        opacity: 0.0;
+    }
+    to {
+        opacity: 1;
+    }
+    
 }
