@@ -8,12 +8,14 @@
 
 body {
     background-color: rgb(240, 239, 239);
+    transition: background-color 0.5s;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+
 }
 
 .gallery {
@@ -41,6 +43,7 @@ body {
     border: none;
     border-radius: 3px;
     transition: transform 0.8s;
+
 }
 
 .thumbnail img:hover {
@@ -49,8 +52,9 @@ body {
 
 }
 
-h1 {
+.title {
     font-family: 'Charmonman', sans-serif;
+    transition: color 1.5s;
 }
 
 .popup {
@@ -73,16 +77,18 @@ h1 {
     width: 88px;
     height: 88px;
     position: fixed;
-    right: 8px;
-    top: 8px;
+    right: 5px;
+    top: 5px;
     color: aliceblue;
     border: none;
     transition: transform 0.3s;
     cursor: pointer;
+    opacity: 0.8;
 }
 
 .popup__close:hover {
     transform: scale(1.1);
+    opacity: 1;
 }
 
 .popup.hidden {
@@ -148,17 +154,35 @@ h1 {
     position: relative;
 }
 
-.border__main {
-    border: solid;
-    border-color: yellow;
-}
-
 @keyframes show {
     from {
         opacity: 0.0;
     }
+
     to {
         opacity: 1;
     }
-    
+
+}
+
+/* DARK MODE */
+
+.dark__mode {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+    width: 60px;
+    opacity: 0.8;
+}
+
+.dark__mode:hover {
+    opacity: 1;
+}
+
+.dark__mode--font {
+    color: rgb(232, 234, 236);
+}
+
+.dark_mode--color {
+    background-color: rgba(0, 0, 0, 0.904);
 }

@@ -5,6 +5,8 @@ const POPUP_IMG = document.querySelector('.popup__img');
 const ARROW_LEFT = document.querySelector('.popup__arrow--left');
 const ARROW_RIGHT = document.querySelector('.popup__arrow--right');
 const POPUP_THUMBNAIL = document.querySelector('.popup__thumbnail img');
+const DARK_MODE = document.querySelector('.dark__mode');
+const FONT_COLOR = document.querySelector('.title')
 
 let currentImg;
 
@@ -84,3 +86,8 @@ POPUP.addEventListener('click', (e) => {
         exitPopup()
     }
 })
+
+DARK_MODE.addEventListener('click', (e) =>{
+    FONT_COLOR.classList.toggle('dark__mode--font');
+    document.body.classList.toggle('dark_mode--color');
+});
