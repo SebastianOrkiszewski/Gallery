@@ -8,6 +8,7 @@ const POPUP_THUMBNAIL = document.querySelector('.popup__thumbnail img');
 const DARK_MODE = document.querySelector('.dark__mode');
 const FONT_COLOR = document.querySelector('.title')
 
+let theme = localStorage.getItem('theme') || 'light';
 let currentImg;
 
 THUMBNAIL.forEach((thumbnail, index) => {
@@ -53,7 +54,7 @@ const exitPopup = () => {
     THUMBNAIL.forEach(element => {
         element.setAttribute("tabindex", 1);
     });
-    
+
 };
 
 
@@ -87,7 +88,17 @@ POPUP.addEventListener('click', (e) => {
     }
 })
 
-DARK_MODE.addEventListener('click', (e) =>{
-    FONT_COLOR.classList.toggle('dark__mode--font');
-    document.body.classList.toggle('dark_mode--color');
+DARK_MODE.addEventListener('click', (e) => {
+    if (theme === 'dark') {
+        document.querySelector('body').classList.remove('dark');
+        theme = 'light';
+    } else {
+        document.querySelector('body').classList.add('dark');
+        theme = 'dark';
+    }
+    localStorage.setItem('theme', theme)
 });
+
+if (theme === 'dark') {
+    document.querySelector('body').classList.add('dark');
+}
